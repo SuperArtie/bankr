@@ -3,7 +3,11 @@ block content
   h2 Create Account
   form(method='post', action='/accounts')
     input(name='name', type='text', placeholder='Name', autofocus=true)
-    input(name='balance', type='number', placeholder='$ 0')
-    input(name='type', type='text', placeholder='account type')
-    input(name='date', type='text', placeholder='mm/dd/year')
+    input(name='color', type='color', value='#FF0000') 
+    input(name='photo', type='text', placeholder='img url')
+    select(name='type')
+      option(value='checking') checking
+      option(value='savings') savings
+    input(name='pin', type='text', placeholder='PIN number')
+    input(name='balance', type='text', placeholder='initial balance')
     button Create Account

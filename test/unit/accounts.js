@@ -39,7 +39,7 @@ describe('Account', function(){
     trans = new Transaction(o2);
     
     acct1.addTrans(trans);
-    //console.log(acct1);
+    console.log(acct1);
 
     var o3 = {type: 'deposit', pin:'1234', amount:'110.00'};
     trans2 = new Transaction(o3);
@@ -82,7 +82,7 @@ describe('Account', function(){
       acct1.save(function(){
         Account.findById(acct1._id.toString(), function(err, account){
           account.addTrans(trans);
-          console.log(account);
+          //console.log(account);
           expect(account).to.respondTo('addTrans');
           expect(account.pin).to.equal(1234);
           expect(account.type).to.equal('checking');

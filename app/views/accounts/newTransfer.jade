@@ -1,0 +1,10 @@
+extends ../shared/template
+block content
+  h2 Create Transfer
+
+  form(method='post', action='/accounts/#{acct._id}')
+    select(name='to')
+      each account in accounts
+        option(value='#{account._id}')= account.name
+    input(name='amt', type='text', placeholder='transfer amount')
+    button Transfer!

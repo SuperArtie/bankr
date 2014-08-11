@@ -5,15 +5,15 @@ block content
     thead
       tr
         th Name
-        th Balance
         th Type
-        th Date Opened
+        th Balance
+        th Opened
     tbody
       each account in accounts
-        tr
-          td= account.name
-          td= account.balance
+        tr(style='background-color:#{account.color};')
+          td: a(href='/accounts/#{account._id}')= account.name
           td= account.type
-          td= account.date
+          td= account.balance
+          td= account.opened
 
 

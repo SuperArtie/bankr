@@ -1,0 +1,12 @@
+extends ../shared/template
+block content
+  h2 Transactify!!!
+
+  form(method='post', action='/accounts/#{account._id}')
+    label Deposit
+    input(name='type', type='radio', value='deposit')
+    label Withdrawal
+    input(name='type', type='radio', value='withdrawal')
+    input(name='pin', type='text', placeholder='PIN number')
+    input(name='amount', type='text', placeholder='amount')
+    button Transact!

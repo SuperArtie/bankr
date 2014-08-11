@@ -1,0 +1,43 @@
+extends ../shared/template
+block content
+  h2 #{account.name}'s #{account.type} account!
+  ul
+    li= account.opened
+    li= account.balance
+    li: img(src='#{account.photo}')
+    li: a(href='/accounts/#{account._id}/transaction') Transact!
+    li: a(href='/accounts/#{account._id}/transfer') Transfer!
+  h3 Table of Transactions
+  table
+    thead
+      th ID
+      th Date
+      th Type
+      th Amount
+      th Fee
+    tbody
+      each transaction in account.transactions
+        tr
+          td= transaction.id
+          td= transaction.transDate
+          td= transaction.type
+          td= transaction.amount
+          td= transaction.fee
+  h3 Table of Transfers
+  table
+    thead
+      th ID
+      th Date
+      th From
+      th To
+      th Amount
+      th Fee
+    tbody
+      each transfer in account.transfers
+        tr
+          td= transfer.id
+          td= transfer.transDate
+          td= transfer.from
+          td= transfer.to
+          td= transfer.amount
+          td= transfer.fee
