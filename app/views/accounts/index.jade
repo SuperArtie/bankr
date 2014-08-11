@@ -1,0 +1,19 @@
+extends ../shared/template
+block content
+  h2 Accounts
+  table#accounts
+    thead
+      tr
+        th Name
+        th Balance
+        th Type
+        th Date Opened
+    tbody
+      each account in accounts
+        tr
+          td= account.name
+          td= account.balance
+          td= account.type
+          td= account.date
+
+

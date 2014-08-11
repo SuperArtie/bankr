@@ -1,0 +1,9 @@
+extends ../shared/template
+block content
+  h2 Create Account
+  form(method='post', action='/accounts')
+    input(name='name', type='text', placeholder='Name', autofocus=true)
+    input(name='balance', type='number', placeholder='$ 0')
+    input(name='type', type='text', placeholder='account type')
+    input(name='date', type='text', placeholder='mm/dd/year')
+    button Create Account
